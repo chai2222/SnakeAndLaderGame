@@ -11,29 +11,32 @@ namespace SnakeAndLader
         {
             int Position = 0;
             int die_Roll = 0;
+            int dice_Count = 0;
             Console.WriteLine("Initila Position Of Player1 is: " + Position);
             while (Position < 100)
             {
-                
                 Random random = new Random();
                 die_Roll = random.Next(1, 7);
+                dice_Count++;
 
-                Console.WriteLine("Die_Roll: " + die_Roll);
+                //Console.WriteLine("Die_Roll: " + die_Roll);
 
-                Position = die_Roll;
+                //Position = die_Roll;
 
                 Console.WriteLine("After The Die_Roll Player1 Position is: " + Position);
 
                 int options = random.Next(0, 3);
                 Console.WriteLine("After getting Random Option is :" + options);
 
-                //using switch case to check options
+                //using Switch Case To Check Options
                 switch (options)
                 {
                     case Ladder:
                         Console.WriteLine("In option we getting Ladder");
                         Position += die_Roll;
                         Console.WriteLine("New position1 after getting Ladder :" + Position);
+                        if (Position > 100)
+                            Position = 100;
                         break;
 
                     case Snake:
@@ -58,7 +61,8 @@ namespace SnakeAndLader
                     Console.WriteLine("Previous Position:" + Position);
                 }
             }
-                 Console.WriteLine("Player position1 reaches 100 and the exact winning position is :" + Position);
+            Console.WriteLine("Player position1 reaches 100 and the exact winning position is :" + Position);
+            Console.WriteLine("player wins with a dice count of :" + dice_Count);
         }
     }
 }
