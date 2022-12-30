@@ -51,9 +51,14 @@ namespace SnakeAndLader
                         Console.WriteLine("In option we got No play :" + Position);
                         break;
                 }
-                Console.WriteLine("Current position of player is :" + Position);
+                   Console.WriteLine("Current position of player is :" + Position);
+                if (Position > 100)
+                {
+                    Position -= die_Roll;
+                    Console.WriteLine("Previous Position:" + Position);
+                }
             }
-            Console.WriteLine("Player Position Reaches 100 and he wins at That Position :" + Position);
+                 Console.WriteLine("Player position1 reaches 100 and the exact winning position is :" + Position);
         }
     }
 }
